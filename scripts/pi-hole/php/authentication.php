@@ -59,7 +59,6 @@ class Authentication
     private function sessionExists()
     {
         $res = isset($_SESSION["hash"]);
-        error_log("authenticated: " . $res);
         return $res;
     }
 
