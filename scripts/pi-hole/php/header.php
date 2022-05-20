@@ -147,7 +147,9 @@
 
     function pidofFTL()
     {
-        return shell_exec("pidof pihole-FTL");
+	    $pid = shell_exec("pidof pihole-FTL");
+	    error_log("ftl pid: " . $pid);
+	    return $pid;
     }
     $FTLpid = intval(pidofFTL());
     $FTL = ($FTLpid !== 0 ? true : false);

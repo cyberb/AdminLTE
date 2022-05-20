@@ -45,7 +45,6 @@ function connectFTL($address, $port=4711)
 		}
 	}
 
-    error_log("ftl connect: " . $address . ":" . $port);
 	// Open Internet socket connection
 	$socket = @fsockopen($address, $port, $errno, $errstr, 1.0);
 
@@ -79,7 +78,6 @@ function getResponseFTL()
 			break;
 
 		$out = rtrim($out);
-		error_log("ftl output: " . $out);
 		if(strlen($out) > 0)
 			$response[] = $out;
 	}
